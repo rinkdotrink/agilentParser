@@ -4,8 +4,8 @@ import com.google.inject.AbstractModule;
 import de.dm.controller.KnotenEinhaenger;
 import de.dm.controller.KnotenErzeuger;
 import de.dm.controller.LogProcessor;
-import de.dm.controller.TestNodeCreator;
 import de.dm.controller.ZeilenParser;
+import de.dm.util.NodeCreatorUtil;
 
 
 public class ParserModule extends AbstractModule {
@@ -16,6 +16,6 @@ public class ParserModule extends AbstractModule {
 		bind(KnotenEinhaenger.class);
 		bind(ZeilenParser.class);
 		bind(LogProcessor.class);
-		bind(TestNodeCreator.class);
+		bind(NodeCreatorUtil.class);
 	}
 }

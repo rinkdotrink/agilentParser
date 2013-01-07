@@ -1,4 +1,5 @@
 package de.dm.controller;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -16,12 +17,13 @@ public class LogProcessor {
 	private ZeilenParser zeilenParser;
 
 	@Inject
-	public LogProcessor(KnotenErzeuger aKnotenErzeuger, KnotenEinhaenger aKnotenEinhaenger, ZeilenParser aZeilenParser) {
+	public LogProcessor(KnotenErzeuger aKnotenErzeuger,
+			KnotenEinhaenger aKnotenEinhaenger, ZeilenParser aZeilenParser) {
 		knotenErzeuger = aKnotenErzeuger;
 		knotenEinhaenger = aKnotenEinhaenger;
 		zeilenParser = aZeilenParser;
 	}
-	
+
 	public ILogEntryNode getBaum(final String aFileName) {
 		erstelleBaum(aFileName);
 		return knotenEinhaenger.getRoot();
@@ -38,10 +40,13 @@ public class LogProcessor {
 		try {
 			while ((zeile = in.readLine()) != null) {
 				zeilenParser.parseZeile(zeile);
-				while(zeilenParser.hasMoreStringNodes()){
-					LogEntryNode knoten = knotenErzeuger.erzeugeKnoten(zeilenParser.getNextNode());
-					knotenEinhaenger.addKnoten(knoten);	
-				}				
+				while (zeilenParser.hasMoreStringNodes()) {
+					LogEntryNode knoten = knotenErzeuger
+							.erzeugeKnoten(zeilenParser.getNextNode());
+					if (knoten != null) {
+						knotenEinhaenger.addKnoten(knoten);
+					}
+				}
 			}
 			knotenEinhaenger.flush();
 			in.close();

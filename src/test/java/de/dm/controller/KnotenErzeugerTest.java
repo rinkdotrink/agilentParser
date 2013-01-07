@@ -9,6 +9,7 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 
 import de.dm.main.ParserModule;
+import de.dm.util.NodeCreatorUtil;
 import de.sidafe.logEntries.ACAP;
 import de.sidafe.logEntries.ADIO;
 import de.sidafe.logEntries.AFUS;
@@ -31,12 +32,12 @@ import de.sidafe.util.impl.LogEntryNode;
 
 public class KnotenErzeugerTest {
 
-	private TestNodeCreator testNodeCreator;
+	private NodeCreatorUtil testNodeCreator;
 	private Injector injector = Guice.createInjector(new ParserModule());
 
 	@Before
 	public void setUp() throws Exception {
-		testNodeCreator = injector.getInstance(TestNodeCreator.class);
+		testNodeCreator = injector.getInstance(NodeCreatorUtil.class);
 	}
 
 	@Test

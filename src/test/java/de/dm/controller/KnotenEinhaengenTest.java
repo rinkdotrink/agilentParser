@@ -9,6 +9,7 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 
 import de.dm.main.ParserModule;
+import de.dm.util.NodeCreatorUtil;
 import de.sidafe.logEntries.ACAP;
 import de.sidafe.logEntries.ADIO;
 import de.sidafe.logEntries.AFUS;
@@ -33,13 +34,13 @@ import de.sidafe.util.impl.LogEntryNode;
 public class KnotenEinhaengenTest {
 
 	private KnotenEinhaenger knotenEinhaenger;
-	private TestNodeCreator testNodeCreator;
+	private NodeCreatorUtil testNodeCreator;
 	private Injector injector = Guice.createInjector(new ParserModule());
 
 	@Before
 	public void setUp() throws Exception {
 		knotenEinhaenger = injector.getInstance(KnotenEinhaenger.class);
-		testNodeCreator = injector.getInstance(TestNodeCreator.class);
+		testNodeCreator = injector.getInstance(NodeCreatorUtil.class);
 	}
 
 	@Test

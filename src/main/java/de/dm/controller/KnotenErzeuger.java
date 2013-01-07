@@ -1,5 +1,8 @@
 package de.dm.controller;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,10 +50,11 @@ public class KnotenErzeuger {
 	private LogEntryNode logEntryNode;
 
 	public LogEntryNode erzeugeKnoten(final List<String> aStringNode) {
+		boolean nodeSupported = true;
 		List<String> stringNode = aStringNode;
 		if (stringNode.get(0).equalsIgnoreCase(BATCH)) {
 			logEntry = new BATCH();
-			stringNode = anpassenStringNodeBATCH(stringNode);			
+			stringNode = anpassenStringNodeBATCH(stringNode);
 		} else if (stringNode.get(0).equalsIgnoreCase(BTEST)) {
 			logEntry = new BTEST();
 			stringNode = anpassenStringNodeBTEST(stringNode);
@@ -86,11 +90,29 @@ public class KnotenErzeuger {
 			logEntry = new TS();
 		} else if (stringNode.get(0).equalsIgnoreCase(DT)) {
 			logEntry = new DT();
+		} else {
+			nodeSupported = false;
+			logUnsupportedNode(stringNode.get(0));
 		}
-		logEntryNode = createLogEntryNode(stringNode);
+		if (nodeSupported) {
+			logEntryNode = createLogEntryNode(stringNode);
+		}
 		return logEntryNode;
 	}
-	
+
+	private void logUnsupportedNode(final String aNodeName) {
+		try {
+			FileWriter writer = new FileWriter(
+					new File("UnsupportedNodes.txt"), true);
+			writer.write(aNodeName);
+			writer.write(System.getProperty("line.separator"));
+			writer.flush();
+			writer.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	private List<String> anpassenStringNodeBATCH(final List<String> aStringNode) {
 		List<String> stringNode = aStringNode;
 		if (stringNode.size() == 14) {
@@ -98,7 +120,7 @@ public class KnotenErzeuger {
 		}
 		return stringNode;
 	}
-	
+
 	private List<String> anpassenStringNodeBTEST(final List<String> aStringNode) {
 		List<String> stringNode = aStringNode;
 		if (stringNode.size() == 13) {
@@ -115,7 +137,7 @@ public class KnotenErzeuger {
 		logEntryNode.setLogEntry(logEntry);
 		return logEntryNode;
 	}
-	
+
 	private List<String> removeNodeName(final List<String> aStringNode) {
 		List<String> stringNode = aStringNode;
 		stringNode.remove(0);
