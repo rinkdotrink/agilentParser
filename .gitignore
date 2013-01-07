@@ -1,0 +1,16 @@
+*.aux
+*.bbl
+*.blg
+*.class
+*.classpath
+*.jar
+*.log
+*.out
+*.swp
+*.toc
+*.project
+*.prefs
+/target
+/logs
+/target
+
