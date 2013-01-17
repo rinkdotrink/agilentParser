@@ -9,7 +9,6 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 
 import de.dm.main.ParserModule;
-import de.dm.util.NodeCreatorUtil;
 import de.sidafe.logEntries.ACAP;
 import de.sidafe.logEntries.ADIO;
 import de.sidafe.logEntries.AFUS;
@@ -29,7 +28,6 @@ import de.sidafe.logEntries.PF;
 import de.sidafe.logEntries.TJET;
 import de.sidafe.logEntries.TS;
 import de.sidafe.util.ILogEntryNode;
-import de.sidafe.util.impl.LogEntryNode;
 
 public class KnotenEinhaengenTest {
 
@@ -47,7 +45,7 @@ public class KnotenEinhaengenTest {
 	public void testAddKnotenBATCH() {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBATCH());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		assertEquals(BATCH.class, batch.getLogEntry().getClass());
 	}
@@ -57,7 +55,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBATCH());
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBTEST());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		assertEquals(BTEST.class, btest.getLogEntry().getClass());
@@ -69,7 +67,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBTEST());
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBLOCK());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block0 = btest.getSubNodes().get(0);
@@ -83,7 +81,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBLOCK());
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeAJUM());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block0 = btest.getSubNodes().get(0);
@@ -99,7 +97,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeAJUM());
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeLIM2());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block0 = btest.getSubNodes().get(0);
@@ -117,7 +115,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeLIM2());
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodePF());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode btest_pf = btest.getSubNodes().get(1);
@@ -134,7 +132,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodePF());
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBLOCK());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block1 = btest.getSubNodes().get(2);
@@ -152,7 +150,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBLOCK());
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeAJUM());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block1 = btest.getSubNodes().get(2);
@@ -172,7 +170,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeAJUM());
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeLIM2());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block1 = btest.getSubNodes().get(2);
@@ -194,7 +192,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeLIM2());
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBLOCK()); // Block2
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block2 = btest.getSubNodes().get(3);
@@ -215,7 +213,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBLOCK()); // Block2
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeAJUM());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block2 = btest.getSubNodes().get(3);
@@ -238,7 +236,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeAJUM());
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeLIM2());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block2 = btest.getSubNodes().get(3);
@@ -263,7 +261,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeLIM2());
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBLOCK()); // Block3
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block3 = btest.getSubNodes().get(4);
@@ -288,7 +286,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeAJUM());
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeLIM2());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block3 = btest.getSubNodes().get(4);
@@ -304,7 +302,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBLOCK()); // Block0
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeAMEA());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block0 = btest.getSubNodes().get(0);
@@ -322,7 +320,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeAMEA());
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeLIM2());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block0 = btest.getSubNodes().get(0);
@@ -338,7 +336,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBLOCK()); // Block0
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeTS());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode ts = btest.getSubNodes().get(1);
@@ -352,7 +350,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBLOCK()); // Block0
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeACAP());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block0 = btest.getSubNodes().get(0);
@@ -368,7 +366,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeACAP());
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeLIM3());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block0 = btest.getSubNodes().get(0);
@@ -384,7 +382,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBLOCK()); // Block0
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeADIO());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block0 = btest.getSubNodes().get(0);
@@ -399,7 +397,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBLOCK()); // Block0
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeARES());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block0 = btest.getSubNodes().get(0);
@@ -415,7 +413,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeARES());
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeARES());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block0 = btest.getSubNodes().get(0);
@@ -434,7 +432,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeARES());
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeAMEA());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block0 = btest.getSubNodes().get(0);
@@ -454,7 +452,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeARES());
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeLIM3());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block0 = btest.getSubNodes().get(0);
@@ -470,7 +468,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBLOCK()); // Block0
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeTJET());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block0 = btest.getSubNodes().get(0);
@@ -486,7 +484,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeTJET());
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeTJET());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block0 = btest.getSubNodes().get(0);
@@ -503,7 +501,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeTJET());
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeTJET());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block0 = btest.getSubNodes().get(0);
@@ -518,7 +516,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBLOCK()); // Block0
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeAIND());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block0 = btest.getSubNodes().get(0);
@@ -533,7 +531,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBLOCK()); // Block0
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeAZEN());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block0 = btest.getSubNodes().get(0);
@@ -548,7 +546,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBLOCK()); // Block0
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeAFUS());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode block0 = btest.getSubNodes().get(0);
@@ -562,7 +560,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBTEST());
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeMCL());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode mcl = btest.getSubNodes().get(0);
@@ -575,7 +573,7 @@ public class KnotenEinhaengenTest {
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBTEST());
 		knotenEinhaenger.addKnoten(testNodeCreator.createNodeDT());
 		knotenEinhaenger.flush();
-		LogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
 		ILogEntryNode batch = node;
 		ILogEntryNode btest = batch.getSubNodes().get(0);
 		ILogEntryNode dt = btest.getSubNodes().get(0);

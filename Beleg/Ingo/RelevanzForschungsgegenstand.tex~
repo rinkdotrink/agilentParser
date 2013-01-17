@@ -1,0 +1,2 @@
+\section{Relevanz des Forschungsgegenstandes}\label{RelevanzDesForschungsgegenstandes}
+Der Forschungsgegenstand dieser Arbeit ist, ein Compiler-Frontend für Agilent-Logdateien zu erstellen. Der Forschungsgegenstand ist relevant, da bisher kein Compiler-Frontend für das Umwandeln von Agilent-Logdateien in das Intermediate-Format vorliegt. Darüberhinaus müssen für das Erstellen des Frontends technische Probleme gelöst werden. Ziel der Forschung ist es, einen Frontend zu entwerfen, dass das Agilent-Logformat in ein Intermediate-Format überführt.

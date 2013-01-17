@@ -8,7 +8,6 @@ import java.io.IOException;
 import com.google.inject.Inject;
 
 import de.sidafe.util.ILogEntryNode;
-import de.sidafe.util.impl.LogEntryNode;
 
 public class LogProcessor {
 
@@ -41,7 +40,7 @@ public class LogProcessor {
 			while ((zeile = in.readLine()) != null) {
 				zeilenParser.parseZeile(zeile);
 				while (zeilenParser.hasMoreStringNodes()) {
-					LogEntryNode knoten = knotenErzeuger
+					ILogEntryNode knoten = knotenErzeuger
 							.erzeugeKnoten(zeilenParser.getNextNode());
 					if (knoten != null) {
 						knotenEinhaenger.addKnoten(knoten);

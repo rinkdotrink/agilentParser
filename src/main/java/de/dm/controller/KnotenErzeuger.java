@@ -25,6 +25,7 @@ import de.sidafe.logEntries.PF;
 import de.sidafe.logEntries.TJET;
 import de.sidafe.logEntries.TS;
 import de.sidafe.util.ILogEntry;
+import de.sidafe.util.ILogEntryNode;
 import de.sidafe.util.impl.LogEntryNode;
 
 public class KnotenErzeuger {
@@ -47,9 +48,9 @@ public class KnotenErzeuger {
 	private final String TS = "@TS";
 	private final String DT = "@D-T";
 	private ILogEntry logEntry;
-	private LogEntryNode logEntryNode;
+	private ILogEntryNode logEntryNode;
 
-	public LogEntryNode erzeugeKnoten(final List<String> aStringNode) {
+	public ILogEntryNode erzeugeKnoten(final List<String> aStringNode) {
 		boolean nodeSupported = true;
 		List<String> stringNode = aStringNode;
 		if (stringNode.get(0).equalsIgnoreCase(BATCH)) {
@@ -129,7 +130,7 @@ public class KnotenErzeuger {
 		return stringNode;
 	}
 
-	private LogEntryNode createLogEntryNode(final List<String> aStringNode) {
+	private ILogEntryNode createLogEntryNode(final List<String> aStringNode) {
 		List<String> stringNode = aStringNode;
 		stringNode = removeNodeName(stringNode);
 		logEntry.setLogEntryValues(new ArrayList<String>(stringNode));

@@ -9,7 +9,6 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 
 import de.dm.main.ParserModule;
-import de.dm.util.NodeCreatorUtil;
 import de.sidafe.logEntries.ACAP;
 import de.sidafe.logEntries.ADIO;
 import de.sidafe.logEntries.AFUS;
@@ -28,7 +27,7 @@ import de.sidafe.logEntries.MCL;
 import de.sidafe.logEntries.PF;
 import de.sidafe.logEntries.TJET;
 import de.sidafe.logEntries.TS;
-import de.sidafe.util.impl.LogEntryNode;
+import de.sidafe.util.ILogEntryNode;
 
 public class KnotenErzeugerTest {
 
@@ -42,109 +41,109 @@ public class KnotenErzeugerTest {
 
 	@Test
 	public void testErzeugeKnotenBATCH() {
-		LogEntryNode logEntryNode = testNodeCreator.createNodeBATCH();
+		ILogEntryNode logEntryNode = testNodeCreator.createNodeBATCH();
 		assertEquals(BATCH.class, logEntryNode.getLogEntry().getClass());
 	}
 
 	@Test
 	public void testErzeugeKnotenBTEST() {
-		LogEntryNode logEntryNode = testNodeCreator.createNodeBTEST();
+		ILogEntryNode logEntryNode = testNodeCreator.createNodeBTEST();
 		assertEquals(BTEST.class, logEntryNode.getLogEntry().getClass());
 	}
 
 	@Test
 	public void testErzeugeKnotenBLOCK() {
-		LogEntryNode logEntryNode = testNodeCreator.createNodeBLOCK();
+		ILogEntryNode logEntryNode = testNodeCreator.createNodeBLOCK();
 		assertEquals(BLOCK.class, logEntryNode.getLogEntry().getClass());
 	}
 
 	@Test
 	public void testErzeugeKnotenAJUM() {
-		LogEntryNode logEntryNode = testNodeCreator.createNodeAJUM();
+		ILogEntryNode logEntryNode = testNodeCreator.createNodeAJUM();
 		assertEquals(AJUM.class, logEntryNode.getLogEntry().getClass());
 	}
 
 	@Test
 	public void testErzeugeKnotenLIM2() {
-		LogEntryNode logEntryNode = testNodeCreator.createNodeLIM2();
+		ILogEntryNode logEntryNode = testNodeCreator.createNodeLIM2();
 		assertEquals(LIM2.class, logEntryNode.getLogEntry().getClass());
 	}
 
 	@Test
 	public void testErzeugeKnotenPF() {
-		LogEntryNode logEntryNode = testNodeCreator.createNodePF();
+		ILogEntryNode logEntryNode = testNodeCreator.createNodePF();
 		assertEquals(PF.class, logEntryNode.getLogEntry().getClass());
 	}
 
 	@Test
 	public void testErzeugeKnotenAMEA() {
-		LogEntryNode logEntryNode = testNodeCreator.createNodeAMEA();
+		ILogEntryNode logEntryNode = testNodeCreator.createNodeAMEA();
 		assertEquals(AMEA.class, logEntryNode.getLogEntry().getClass());
 	}
-	
+
 	@Test
 	public void testErzeugeKnotenARES() {
-		LogEntryNode logEntryNode = testNodeCreator.createNodeARES();
+		ILogEntryNode logEntryNode = testNodeCreator.createNodeARES();
 		assertEquals(ARES.class, logEntryNode.getLogEntry().getClass());
 	}
-	
+
 	@Test
 	public void testErzeugeKnotenACAP() {
-		LogEntryNode logEntryNode = testNodeCreator.createNodeACAP();
+		ILogEntryNode logEntryNode = testNodeCreator.createNodeACAP();
 		assertEquals(ACAP.class, logEntryNode.getLogEntry().getClass());
-	}	
-	
+	}
+
 	@Test
 	public void testErzeugeKnotenADIO() {
-		LogEntryNode logEntryNode = testNodeCreator.createNodeADIO();
+		ILogEntryNode logEntryNode = testNodeCreator.createNodeADIO();
 		assertEquals(ADIO.class, logEntryNode.getLogEntry().getClass());
 	}
-	
+
 	@Test
 	public void testErzeugeKnotenAFUS() {
-		LogEntryNode logEntryNode = testNodeCreator.createNodeAFUS();
+		ILogEntryNode logEntryNode = testNodeCreator.createNodeAFUS();
 		assertEquals(AFUS.class, logEntryNode.getLogEntry().getClass());
 	}
-	
+
 	@Test
 	public void testErzeugeKnotenAIND() {
-		LogEntryNode logEntryNode = testNodeCreator.createNodeAIND();
+		ILogEntryNode logEntryNode = testNodeCreator.createNodeAIND();
 		assertEquals(AIND.class, logEntryNode.getLogEntry().getClass());
 	}
-	
+
 	@Test
 	public void testErzeugeKnotenAZEN() {
-		LogEntryNode logEntryNode = testNodeCreator.createNodeAZEN();
+		ILogEntryNode logEntryNode = testNodeCreator.createNodeAZEN();
 		assertEquals(AZEN.class, logEntryNode.getLogEntry().getClass());
 	}
-	
+
 	@Test
 	public void testErzeugeKnotenLIM3() {
-		LogEntryNode logEntryNode = testNodeCreator.createNodeLIM3();
+		ILogEntryNode logEntryNode = testNodeCreator.createNodeLIM3();
 		assertEquals(LIM3.class, logEntryNode.getLogEntry().getClass());
 	}
-	
+
 	@Test
 	public void testErzeugeKnotenMCL() {
-		LogEntryNode logEntryNode = testNodeCreator.createNodeMCL();
+		ILogEntryNode logEntryNode = testNodeCreator.createNodeMCL();
 		assertEquals(MCL.class, logEntryNode.getLogEntry().getClass());
 	}
-	
+
 	@Test
 	public void testErzeugeKnotenTJET() {
-		LogEntryNode logEntryNode = testNodeCreator.createNodeTJET();
+		ILogEntryNode logEntryNode = testNodeCreator.createNodeTJET();
 		assertEquals(TJET.class, logEntryNode.getLogEntry().getClass());
 	}
-	
+
 	@Test
 	public void testErzeugeKnotenTS() {
-		LogEntryNode logEntryNode = testNodeCreator.createNodeTS();
+		ILogEntryNode logEntryNode = testNodeCreator.createNodeTS();
 		assertEquals(TS.class, logEntryNode.getLogEntry().getClass());
 	}
-	
+
 	@Test
 	public void testKnotenErzeugenDT() {
-		LogEntryNode logEntryNode = testNodeCreator.createNodeDT();
+		ILogEntryNode logEntryNode = testNodeCreator.createNodeDT();
 		assertEquals(DT.class, logEntryNode.getLogEntry().getClass());
 	}
 

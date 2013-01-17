@@ -23,26 +23,25 @@ import de.sidafe.logEntries.TJET;
 import de.sidafe.logEntries.TS;
 import de.sidafe.util.ILogEntry;
 import de.sidafe.util.ILogEntryNode;
-import de.sidafe.util.impl.LogEntryNode;
 
 public class KnotenEinhaenger {
 
-	private LogEntryNode root;
-	private LogEntryNode blockTemp;
-	private List<LogEntryNode> ajumTemps = new ArrayList<LogEntryNode>();
-	private List<LogEntryNode> afusTemps = new ArrayList<LogEntryNode>();
-	private List<LogEntryNode> aindTemps = new ArrayList<LogEntryNode>();
-	private List<LogEntryNode> azenTemps = new ArrayList<LogEntryNode>();
-	private List<LogEntryNode> lim2Temps = new ArrayList<LogEntryNode>();
-	private List<LogEntryNode> ameaTemps = new ArrayList<LogEntryNode>();
-	private List<LogEntryNode> acapTemps = new ArrayList<LogEntryNode>();
-	private List<LogEntryNode> lim3Temps = new ArrayList<LogEntryNode>();
-	private List<LogEntryNode> adioTemps = new ArrayList<LogEntryNode>();
-	private List<LogEntryNode> aresTemps = new ArrayList<LogEntryNode>();
-	private List<LogEntryNode> tjetTemps = new ArrayList<LogEntryNode>();
+	private ILogEntryNode root;
+	private ILogEntryNode blockTemp;
+	private List<ILogEntryNode> ajumTemps = new ArrayList<ILogEntryNode>();
+	private List<ILogEntryNode> afusTemps = new ArrayList<ILogEntryNode>();
+	private List<ILogEntryNode> aindTemps = new ArrayList<ILogEntryNode>();
+	private List<ILogEntryNode> azenTemps = new ArrayList<ILogEntryNode>();
+	private List<ILogEntryNode> lim2Temps = new ArrayList<ILogEntryNode>();
+	private List<ILogEntryNode> ameaTemps = new ArrayList<ILogEntryNode>();
+	private List<ILogEntryNode> acapTemps = new ArrayList<ILogEntryNode>();
+	private List<ILogEntryNode> lim3Temps = new ArrayList<ILogEntryNode>();
+	private List<ILogEntryNode> adioTemps = new ArrayList<ILogEntryNode>();
+	private List<ILogEntryNode> aresTemps = new ArrayList<ILogEntryNode>();
+	private List<ILogEntryNode> tjetTemps = new ArrayList<ILogEntryNode>();
 
-	public void addKnoten(final LogEntryNode aKnoten) {
-		LogEntryNode knoten = aKnoten;
+	public void addKnoten(final ILogEntryNode aKnoten) {
+		ILogEntryNode knoten = aKnoten;
 		Class<? extends ILogEntry> knotenName = knoten.getLogEntry().getClass();
 		if (knotenName.equals(BATCH.class)) {
 			root = knoten;
@@ -83,11 +82,11 @@ public class KnotenEinhaenger {
 		}
 	}
 
-	public LogEntryNode getRoot() {
+	public ILogEntryNode getRoot() {
 		return root;
 	}
 
-	private void saveOrFlushAndSave(final LogEntryNode aKnoten) {
+	private void saveOrFlushAndSave(final ILogEntryNode aKnoten) {
 		if (blockTemp == null) {
 			blockTemp = aKnoten;
 		} else {
@@ -124,7 +123,7 @@ public class KnotenEinhaenger {
 
 	private void flushTjetTemps() {
 		if (!tjetTemps.isEmpty()) {
-			for (LogEntryNode tjetTemp : tjetTemps) {
+			for (ILogEntryNode tjetTemp : tjetTemps) {
 				blockTemp.getSubNodes().add(tjetTemp);
 			}
 		}
@@ -136,8 +135,8 @@ public class KnotenEinhaenger {
 		}
 	}
 
-	private void flushTemps(final List<LogEntryNode> aParents,
-			final List<LogEntryNode> aChildren) {
+	private void flushTemps(final List<ILogEntryNode> aParents,
+			final List<ILogEntryNode> aChildren) {
 		if (!aParents.isEmpty()) {
 			assignChildren2Parents(aParents, aChildren);
 		}
@@ -158,10 +157,10 @@ public class KnotenEinhaenger {
 		tjetTemps.clear();
 	}
 
-	private void assignChildren2Parents(final List<LogEntryNode> aParents,
-			final List<LogEntryNode> aChildren) {
-		List<LogEntryNode> parents = aParents;
-		List<LogEntryNode> children = aChildren;
+	private void assignChildren2Parents(final List<ILogEntryNode> aParents,
+			final List<ILogEntryNode> aChildren) {
+		List<ILogEntryNode> parents = aParents;
+		List<ILogEntryNode> children = aChildren;
 		for (int i = 0; i < parents.size(); i++) {
 			if (!children.isEmpty()) {
 				parents.get(i).getSubNodes().add(children.get(0));

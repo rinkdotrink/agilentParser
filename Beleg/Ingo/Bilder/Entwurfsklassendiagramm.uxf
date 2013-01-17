@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="11.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>530</w>
+      <h>490</h>
+    </coordinates>
+    <panel_attributes>KnotenErzeuger
+--
+-logEntry : ILogEntry
+-logEntryNode : ILogEntryNode
+-BATCH : String
+-BTEST : String
+-BLOCK : String
+-AJUM : String
+-LIM2 : String
+-PF : String
+-AMEA : String
+-ARES : String
+-ACAP : String
+-ADIO : String
+-AFUS : String
+-AIND : String
+-AZEN : String
+-LIM3 : String
+-MCL : String
+-TJET : String
+-TS : String
+-DT : String
+--
++erzeugeKnoten(aStringNode : List&lt;String&gt;) : ILogEntryNode
+-logUnsupportedNode(String aNodeName) : void
+-anpassenStringNodeBATCH(aStringNode : List&lt;String&gt;) : List&lt;String&gt;
+-anpassenStringNodeBTEST(aStringNode : List&lt;String&gt;) : List&lt;String&gt;
+-createLogEntryNode(aStringNode : List&lt;String&gt;) : ILogEntryNode
+-removeNodeName(aStringNode : List&lt;String&gt;) : List&lt;String&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>0</x>
+      <y>590</y>
+      <w>420</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>LogProcessor
+--
+--
++LogProcessor(aKnotenErzeuger : KnotenErzeuger, 
+                         aKnotenEinhaenger : KnotenEinhaenger,
+                         aZeilenParser : ZeilenParser)
++getBaum(aFileName : String) : ILogEntryNode
++erstelleBaum(aFileName : String) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>140</x>
+      <y>760</y>
+      <w>270</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>ZeilenParser
+--
+-inputList : List&lt;String&gt;
+--
++parseZeile(aZeile : String) : void
++hasMoreStringNodes() : boolean
++getNextNode() : List&lt;String&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>0</x>
+      <y>510</y>
+      <w>210</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>ParserModule
+--
+--
+#configure() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>0</x>
+      <y>900</y>
+      <w>490</w>
+      <h>450</h>
+    </coordinates>
+    <panel_attributes>KnotenEinhaenger
+--
+-root : ILogEntryNode
+-blockTemp : ILogEntryNode
+-acapTemps: List&lt;ILogEntryNode&gt;
+-adioTemps: List&lt;ILogEntryNode&gt;
+-afusTemps: List&lt;ILogEntryNode&gt;
+-aindTemps: List&lt;ILogEntryNode&gt;
+-ajumTemps: List&lt;ILogEntryNode&gt;
+-ameaTemps: List&lt;ILogEntryNode&gt;
+-aresTemps: List&lt;ILogEntryNode&gt;
+-azenTemps: List&lt;ILogEntryNode&gt;
+-lim2Temps: List&lt;ILogEntryNode&gt;
+-lim3Temps: List&lt;ILogEntryNode&gt;
+--
++addKnoten(aKnoten : ILogEntryNode) : void
++getRoot() : ILogEntryNode
++flush() : void
+-saveOrFlushAndSave(aKnoten : ILogEntryNode) : void
+-addToBTEST(aKnoten : ILogEntryNode) : void
+-flushTemps() : void
+-flushTjetTemps() : void
+-flushBlockTemp() : void
+-flushTemps(aParents : List&lt;ILogEntryNode&gt;) : void
+-clearTemps() : void
+-assignChildren2Parents(aParents : List&lt;ILogEntryNode, 
+                                        aChildren : List&lt;ILogEntryNode&gt;) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>390</x>
+      <y>460</y>
+      <w>140</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=1
+m2=1
+hat&gt;</panel_attributes>
+    <additional_attributes>30;170;120;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>390</x>
+      <y>680</y>
+      <w>110</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=1
+m2=1
+hat&gt;</panel_attributes>
+    <additional_attributes>30;30;90;220</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>0</x>
+      <y>690</y>
+      <w>160</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=1
+m2=1
+hat&gt;</panel_attributes>
+    <additional_attributes>30;30;140;130</additional_attributes>
+  </element>
+</diagram>
