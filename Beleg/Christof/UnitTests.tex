@@ -1,0 +1,49 @@
+\section{Unit Tests}\label{UnitTests}
+\subsection{ZeilenParserTest}
+Im ZeilenparserTest werden die Methode \textit{parseZeile()}, \textit{hasMoreStringNodes()} sowie \textit{getNextNode()} getestet. Zuerst wird der Methode parseZeile() eine Zeile der Log-Datei als String übergeben z.B.:
+\begin{verbatim}
+{@BATCH|501-6338-02|50|12|1||btest|040107103921||solmb3t1|||||
+\end{verbatim}
+Daraufhin werden alle geschweiften Klammern aufgelöst und die einzelnen Parameter in einer List$<$String$>$ gespeichert. Die Methode hasMoreStringNodes() liefert true, falls ein Listenelement den Anfang eines Records darstellt und mit @-Zeichen beginnt. Wenn eine Zeile mehrere Records enthält, wird mit getNextNode() immer das komplette nächste Record als Liste zurückgegeben. Diese Funktionalität wird beispielsweise in folgendem Test geprüft:
+\begin{verbatim}
+@Test
+	public void testGetNextSecond() {
+		String inpu = "{@A-JUM|0|+7.630803E+06{@LIM2|+9.999999E+99|+1.000000E+04}}";
+		zeilenParser.parseZeile(inpu);
+		zeilenParser.getNextNode();
+		ArrayList<String> stringNode = new ArrayList<String>();
+		stringNode.add("@LIM2");
+		stringNode.add("+9.999999E+99");
+		stringNode.add("+1.000000E+04");
+		assertTrue(zeilenParser.getNextNode().equals(stringNode));
+	} 
+\end{verbatim}
+\subsection{KnotenErzeugerTest}
+Im KnotenErzeugerTest wird die Methode \textit{erzeugeKnoten()} getestet. Ihr wird eine Liste mit den Attributen eines Records übergeben, die mit Hilfe der \textit{NodeCreatorUtil}-Klasse erzeugt wurde. Daraufhin prüft die Methode anhand des ersten Listenelements um welches Record es sich handelt und erzeugt eine Instanz der entsprechenden Record-Klasse, die eine Implementierung der \textit{ILogEntry}-Schnittstelle ist. Jede Record-Instanz enthält die beiden Listen \textbf{headings} und \textbf{values}. Headings sind die Namen der Record-Attribute und werden im Konstruktor gesetzt. Anschließend ruft die \textit{erzeugeKnoten()}-Methode createLogEntryNode() auf, in der die values gesetzt werden und eine Instanz der \textit{LogEntryNode-Klasse} erzeugt wird. Im Unit-Test wird geprüft, ob der richtige Knoten erfolgreich erzeugt wurde:
+\begin{verbatim}
+@Test
+	public void testErzeugeKnotenBATCH() {
+		ILogEntryNode logEntryNode = testNodeCreator.createNodeBATCH();
+		assertEquals(BATCH.class, logEntryNode.getLogEntry().getClass());
+	}
+\end{verbatim}
+
+\subsection{KnotenEinhaengenTest}
+Hierbei wird die Methode \textit{addKnoten()} getestet. Nachdem ein Knoten erzeugt wurde, wird er ihr als Parameter übergeben. Diese prüft zuerst um welchen Knoten-Typ es sich handelt. Wenn es ein BATCH-Knoten ist, wird er zum Wurzelknoten(root) des Baumes. Der BTEST-Knoten wird mit \textit{root.getSubNodes().add(knoten)} an den Wurzelknoten eingehängt. Folgt anschließend ein BLOCK-Knoten, werden zuerst an alle seine Unterknoten deren Kinder eingehängt und zum Schluss wird der BLOCK-Knoten in \textit{flushBlockTemp()} an den BTEST-Knoten angefügt. 
+Im KnotenEinhaengenTest werden zuerst der Reihe nach die gewählten Knoten an das Wurzelelement mit addKnoten() eingehängt um anschließend ein bestimmtes Element herauszulesen:
+\begin{verbatim}
+@Test
+	public void testAddKnotenBATCH_BTEST_BLOCK_AJUM() {
+		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBATCH());
+		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBTEST());
+		knotenEinhaenger.addKnoten(testNodeCreator.createNodeBLOCK());
+		knotenEinhaenger.addKnoten(testNodeCreator.createNodeAJUM());
+		knotenEinhaenger.flush();
+		ILogEntryNode node = knotenEinhaenger.getRoot();
+		ILogEntryNode batch = node;
+		ILogEntryNode btest = batch.getSubNodes().get(0);
+		ILogEntryNode block0 = btest.getSubNodes().get(0);
+		ILogEntryNode block0_ajum = block0.getSubNodes().get(0);
+		assertEquals(AJUM.class, block0_ajum.getLogEntry().getClass());
+	}
+\end{verbatim}
