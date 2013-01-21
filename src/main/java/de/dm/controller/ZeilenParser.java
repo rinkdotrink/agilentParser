@@ -28,7 +28,8 @@ public class ZeilenParser {
 		}
 		return hasMoreElements;
 	}
-
+	
+	
 	public List<String> getNextNode() {
 		int counter = 0;
 		ArrayList<String> stringNodeOutput = new ArrayList<String>();
