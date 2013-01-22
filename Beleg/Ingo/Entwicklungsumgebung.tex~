@@ -1,0 +1,2 @@
+\section{Entwicklungsumgebung}\label{Entwicklungsumgebung}
+JavaSE-1.6, Maven 3.0.4, Eclipse Java EE IDE for Web Developers (Juno) Service Release 1, Ubuntu 12.04, JUnit 4.8.1, google guice 3.0, AgilentLogCompiler

@@ -1,0 +1,18 @@
+\section{Projekt importieren}\label{ProjektImportieren}
+Das Projekt liegt im Repository unter folgender URL: 
+
+https://github.com/rinkdotrink/agilentParser.github
+
+Der Projektquelltext kann über git mit folgenden Befehlen heruntergeladen werden: 
+
+\begin{itemize}
+\item git init
+\item git remote add origin https://github.com/rinkdotrink/agilentParser.github
+\item git pull origin master
+\end{itemize}
+
+
+
+
+
+Um den heruntergeladenen Quelltext in Eclipse zu importieren, kann in Eclipse File $\rightarrow$ Import $\rightarrow$ Maven $\rightarrow$ Existing Maven Projects gewählt werden.
