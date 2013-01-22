@@ -2,8 +2,10 @@
 Um die Abhängigkeiten zwischen den Objekten zu minimieren, wird das Entwurfsmuster Dependency
 Injection verwendet. Die Abhängigkeiten werden in diesem Projekt von dem Dependency Injection Framework Google Guice bereitgestellt. Da mit Hilfe von Dependency Injection die Abhängigkeiten eines Objektes reduziert werden, ist es leichter unit-testbar.
 
-Ohne Dependency Injection hätte der LogProcessorTest drei zusätzliche Abhängigkeiten: zu Knotenerzeuger, KnotenEinhaenger und ZeilenParser.
+Ohne Dependency Injection hätte der LogProcessorTest drei zusätzliche Abhängig\-keiten: Knotenerzeuger, KnotenEinhaenger und ZeilenParser.
+
 LogProcessor lp = new LogProcessor(new KnotenErzeuger(), new KnotenEinhaenger(), new ZeilenParser());
 
 Mit Dependency Injection entfallen diese zusätzlichen Abhängigkeiten.
+
 LogProcessor lp = injector.getInstance(LogProcessor.class);

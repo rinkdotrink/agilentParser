@@ -1,4 +1,4 @@
-\section{FunktionaleAnforderungen}\label{FunktionaleAnforderungen}
+\section{Funktionale Anforderungen}\label{FunktionaleAnforderungen}
 Der Parser soll eine Agilent-Logdatei einlesen und sie in ein gegebenes Intermediate-Format umwandeln.
 Dabei sollen nur die Agilent-Knotennamen berücksichtigt werden, die auch in den zur verfügung gestellten Agilent-Logdateien vorkommen. Die zur Verfügung gestellten Logdateien sind auf der Projekt-CD zu finden:
 2012.zip, 20120831.zip, 20120827.zip und 040107105943solmb3t11.dat.
