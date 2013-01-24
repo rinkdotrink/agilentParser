@@ -7,5 +7,5 @@ In Abbildung \ref{fig:Analyseklassendiagramm} auf Seite \pageref{fig:Analyseklas
 \centering
 \includegraphics[width=0.6\textwidth]{Ingo/Bilder/Analyseklassendiagramm.png}
 \caption{Analyseklassendiagramm Agilent-Parser}
-\label{fig:Entwurfsklassendiagramm}
+\label{fig:Analyseklassendiagramm}
 \end{figure}

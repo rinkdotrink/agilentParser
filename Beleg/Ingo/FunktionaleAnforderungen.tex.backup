@@ -1,0 +1,22 @@
+\section{FunktionaleAnforderungen}\label{FunktionaleAnforderungen}
+Der Parser soll eine Agilent-Logdatei einlesen und sie in ein gegebenes Intermediate-Format umwandeln.
+Dabei sollen nur die Agilent-Knotennamen berücksichtigt werden, die auch in den zur verfügung gestellten Agilent-Logdateien vorkommen.
+
+	"@BATCH";
+	"@BTEST";
+	private final String BLOCK = "@BLOCK";
+	private final String AJUM = "@A-JUM";
+	private final String LIM2 = "@LIM2";
+	private final String PF = "@PF";
+	private final String AMEA = "@A-MEA";
+	private final String ARES = "@A-RES";
+	private final String ACAP = "@A-CAP";
+	private final String ADIO = "@A-DIO";
+	private final String AFUS = "@A-FUS";
+	private final String AIND = "@A-IND";
+	private final String AZEN = "@A-ZEN";
+	private final String LIM3 = "@LIM3";
+	private final String MCL = "@M-CL";
+	private final String TJET = "@TJET";
+	private final String TS = "@TS";
+	private final String DT = "@D-T";

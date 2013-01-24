@@ -5,7 +5,7 @@ In Abbildung \ref{fig:Entwurfsklassendiagramm} auf Seite \pageref{fig:Entwurfskl
 
 \begin{figure}[htp]
 \centering
-\includegraphics[width=0.7\textwidth]{Ingo/Bilder/Entwurfsklassendiagramm.png}
+\includegraphics[width=0.6\textwidth]{Ingo/Bilder/Entwurfsklassendiagramm.png}
 \caption{Entwurfsklassendiagramm Agilent-Parser}
 \label{fig:Entwurfsklassendiagramm}
 \end{figure}
