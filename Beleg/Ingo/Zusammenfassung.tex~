@@ -1,2 +1,0 @@
-\section{Zusammenfassung}\label{Zusammenfassung}
-Der Parser kann Agilent-Logdateien einlesen und sie in ein Intermediate-Format umwandeln. Bisher unbekannte Knoten werden in eine Logdatei geschrieben. Die Funktionalität der Klassen wurde über Unittests sichergestellt. Das Zusammenspiel der Klassen untereinander wurde durch Funktionstests geprüft. Bis auf das Problem mit BSCON, dass unter \ref{AgilentFormat} auf Seite \pageref{AgilentFormat} beschrieben wurde, konnten alle Anforderungen im Agilent-Parser umgesetzt werden.
