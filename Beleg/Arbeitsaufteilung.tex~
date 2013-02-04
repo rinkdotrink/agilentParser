@@ -10,30 +10,17 @@ Einleitung  &                             		      & ~\ref{Einleitung} \\
 Aufgabenstellung&                                  & ~\ref{Aufgabenstellung}  \\
 Forschungsgegenstand&                              & ~\ref{RelevanzDesForschungsgegenstandes} \\ 
 akt. Wissensstand&                                      & ~\ref{DerAktuelleWissensstand}  \\ 
-Testrechner&                                      & ~\ref{Testrechner}  \\ 
-Der Aufbau des AT&                                      & ~\ref{AufbauAT}  \\ 
-ARFF&                                      & ~\ref{ARFF}  \\ 
-Clustering-Verfahren&       ~\ref{Clustering}                                &  \\ 
-Partitionierende Verfahren&       ~\ref{Partitionierende}                                &  \\ 
-Austauschverfahren mit Zielfunktion&       ~\ref{Austausch}                        &  \\ 
-Minimaldistanz-Verfahren&       ~\ref{Minimal}                        &  \\ 
-Minimaldistanz-Verfahren&       ~\ref{Minimaldistanz}                        &  \\ 
-k-Means-Verfahren&       ~\ref{kmeans}                        &  \\ 
-EM-Algorithmus&       ~\ref{em}                        &  \\ 
-DBSCAN&       ~\ref{dbscan}                        &  \\ 
-Hierarchische-Verfahren&       ~\ref{Hierarchische}                        &  \\ 
-Agglomerative-Verfahren&       ~\ref{Agglomerative}                        &  \\ 
-Wie AT in das ARFF-Format überführen?&                                      & ~\ref{ATzuARFF}  \\ 
-Analyse Text2ARFFConverter&                                      & ~\ref{AnalyseText2ARFFConverter}  \\ 
-Entwurf Text2ARFFConverter&                                      & ~\ref{EntwurfText2ARFFConverter}  \\ 
-Nach welchen Wörtern clustern?&                                      & ~\ref{WelcheWoerter}  \\ 
-Hürden beim Einlesen der ARFF-Datei&                                      & ~\ref{Huerden}  \\ 
-SimpleKMeans&                                      & ~\ref{SimpleKMeans}  \\ 
-Weitere Cluster-Algorithmen&                                      & ~\ref{weitereClusterAlgorithmen}  \\ 
-Instanzen in Verse verwandeln&                                      & ~\ref{Text2ClusterFile}  \\ 
-AT mit SimpleKMeans geclustert&                                      & ~\ref{SimpleKMeansgeclustert}  \\ 
-Zusammenfassung&         																& ~\ref{Zusammenfassung} \\ 
-Ausblick&        																					 & ~\ref{Ausblick} \\ 
+Hintergrund&                                      & ~\ref{Hintergrund}  \\ 
+Analyse&                                      & ~\ref{Analyse}  \\ 
+Funktionale Anforderungen&                                      & ~\ref{FunktionaleAnforderungen}  \\ 
+Nichtfunktionale Anforderungen&                                      & ~\ref{NichtfunktionaleAnforderungen}  \\ 
+Entwurf&                                      & ~\ref{Entwurf}  \\ 
+Entwicklungsumgebung&                                      & ~\ref{Entwicklungsumgebung}  \\ 
+Dependency Injection mit Goolge Guice&                                      & ~\ref{DependencyInjectionMitGoogleGuice}  \\ 
+Projekt importieren&                                      & ~\ref{ProjektImportieren}  \\ 
+Projekt ausführen&                                      & ~\ref{ProjektAusführen}  \\ 
+Funktionale Tests&                                      & ~\ref{FunktionaleTests}  \\ 
+Zusammenfassung&                                      & ~\ref{Zusammenfassung}  \\ 
 \hline \hline
 \end{tabular} \end{flushleft} \caption{Aufteilung} \end{table}
 

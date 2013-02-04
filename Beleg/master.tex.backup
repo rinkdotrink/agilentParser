@@ -77,9 +77,6 @@
 
 \begin{listofacronyms}
 \acronym{JVM}{Java Virtual Machine}
-\acronym{yacc}{yet another compiler compiler}
-\acronym{JavaCC}{Java Compiler Compiler}
-\acronym{UTF-8}{8-Bit Universal Character Set Transformation Format}
 
 \end{listofacronyms}
 
@@ -89,7 +86,9 @@
 
 \bibitem{bib2}{Freeman, Eric (2007): Entwurfsmuster von Kopf bis Fuﬂ. O'REILLY}
 
-\bibitem{bib3}{Pilone, Dan (2008): Software-Entwicklung von Kopf bis Fuﬂ. O'REILLY}
+\bibitem{bib3}{\begin{verbatim}http://www.cs.waikato.ac.nz/ml/weka/arff.html (08.06.2012)\end{verbatim}} 
+
+
 
 \end{thebibliography}
 \end{flushleft}
@@ -117,6 +116,7 @@
 \input{Ingo/ProjektImportieren}
 \input{Ingo/ProjektAusfuehren}
 \input{Ingo/FunktionaleTests}
+\input{Ingo/UnstimmigkeitenImAgilentFormat}
 \input{Christof/UnitTests}
 \input{Ingo/Zusammenfassung}
 
