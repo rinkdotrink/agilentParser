@@ -1,2 +1,0 @@
-\section{Projekt ausführen}\label{ProjektAusfuehren}
-Das Eclipse-Projekt ist nicht als eigenständiges Programm auszufühen, sondern es ist vielmehr als Bibliothek zu verstehen. Wie es verwendet wird, geht am Besten aus den funktionalen Tests hervor.

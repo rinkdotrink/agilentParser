@@ -1,3 +1,0 @@
-\section{Nichtfunktionale Anforderungen}\label{NichtfunktionaleAnforderungen}
-Die Anwendung wird test-driven entwickelt. Für jede nach außen sichtbare Funktionalität einer Klasse werden Unit-Tests geschrieben. Die Ver
-Die Anwendung soll wartungsfreundlich und damit leicht änderbar und anpassbar sein, wenn z.B. neue Knotennamen hinzugefügt werden.
