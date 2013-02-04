@@ -1,4 +1,0 @@
-\section{Unstimmigkeiten im Agilent-Format}\label{UnstimmigkeitenImAgilentFormat}
-In der Format06.pdf auf Seite 35 stimmt bei BATCH die Anzahl der Attribute nicht mit der Legende überein. Auch in den tatsächlichen Agilent-Logdateien stimmt die Anzahl der Attribute nicht immer mit der Anzahl der Attribute überein, wie sie in der Format06.pdf beschrieben werden.
-
-In der Format06.pdf auf Seite 40 stimmt bei BTEST die Anzahl der Attribute nicht immer mit der tatsächlich vorkommenden Anzahl in der Agilent-Logdatei überein.
