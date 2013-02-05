@@ -1,7 +1,10 @@
 \select@language {ngerman}
+\contentsline {figure}{\numberline {0.1}{\ignorespaces Ablauf}}{I}{figure.0.1}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces vereinfachte Darstellung des Zwischenformates}}{3}{figure.1.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Big Picture}}{4}{figure.1.2}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Analyseklassendiagramm Agilent-Parser}}{4}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Entwurfsklassendiagramm Agilent-Parser}}{6}{figure.2.2}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Analyseklassendiagramm Agilent-Parser}}{5}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Entwurfsklassendiagramm Agilent-Parser}}{7}{figure.2.2}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

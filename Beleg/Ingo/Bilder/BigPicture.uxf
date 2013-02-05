@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="11.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>40</x>
+      <y>50</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Frontend
+(Logdatei-Parser)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>290</x>
+      <y>50</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Backenend</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>160</x>
+      <y>20</y>
+      <w>150</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+&lt;nutzt</panel_attributes>
+    <additional_attributes>30;50;130;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>20</x>
+      <y>10</y>
+      <w>450</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Compiler</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
