@@ -1,6 +1,0 @@
-\section{Hintergrund}\label{Hintergrund}
-Ein Compiler hat im Allgemeinen zwei Phasen: das Frontemd und das Backend. In diesem Projekt soll ein Frontend für einen Compiler erstellt werden.
-In diesem Frontend wird ein sogenannter Logdatei-Parser eingesetzt. Er liest eine Eingabe im Agilent-Logformat und erstellt daraus ein Syntax-Baum in einem gegebenen Zwischenformat.
-In einem Folgeprojekt wird ein Compiler-Backend erstellt, dass den vom Frontend erzeugten Zwischencode nimmt und daraus die gewünschte Ausgabe in einem Zielformat schreibt.
-
-Da das Agilent-Logformat nur halbformal in einer pdf-Datei beschrieben ist und es keine formale Grammatik für das Format gibt, können keine Parsergeneratoren wie JavaCC oder yacc eingesetzt werden, sondern es wird hier für das Agilent-Logformat ein Parser von Hand geschrieben.
